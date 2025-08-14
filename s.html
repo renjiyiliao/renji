@@ -38,13 +38,55 @@
             padding: 20px;
             text-align: center;
         }
+        
+        .browser-tip {
+            background-color: #f8f9fa;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 20px;
+            margin: 20px 0;
+            text-align: center;
+        }
+        
+        .browser-tip h3 {
+            color: #d9534f;
+            margin-top: 0;
+        }
+        
+        .browser-tip ol {
+            text-align: left;
+            display: inline-block;
+            margin: 15px auto;
+        }
+        
+        .browser-tip .btn {
+            display: inline-block;
+            padding: 8px 16px;
+            background-color: #337ab7;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            margin-top: 10px;
+        }
     </style>
 </head>
 <body>
     <div class="frame-container">
-        <div class="frame-title">hello</div>
+        <div class="frame-title">内容展示框架</div>
         
         <?php
+        // 检测是否在微信或QQ内置浏览器中打开
+        function isInWeChatOrQQ() {
+            $userAgent = $_SERVER['HTTP_USER_AGENT'] ?? '';
+            if (strpos($userAgent, 'MicroMessenger') !== false) {
+                return 'wechat';
+            }
+            if (strpos($userAgent, 'QQ/') !== false) {
+                return 'qq';
+            }
+            return false;
+        }
+        
         // API 请求函数
         function getContentUrl() {
             $apiUrl = 'https://nwyy.dbgck.com/mapi/alink/mzg3ywzjzj';
@@ -74,20 +116,48 @@
             }
         }
         
-        // 获取内容 URL
-        $contentUrl = getContentUrl();
+        // 检查浏览器环境
+        $browser = isInWeChatOrQQ();
         
-        if ($contentUrl) {
-            // 验证 URL 安全性
-            if (filter_var($contentUrl, FILTER_VALIDATE_URL)) {
-                echo '<iframe class="content-frame" src="' . htmlspecialchars($contentUrl) . '" frameborder="0"></iframe>';
-            } else {
-                echo '<div class="error">错误: 获取的内容 URL 无效</div>';
-            }
+        if ($browser) {
+            // 在微信或QQ中打开，显示提示信息
+            echo '<div class="browser-tip">';
+            echo '<h3>提示</h3>';
+            echo '<p>请按照以下步骤操作：</p>';
+            echo '<ol>';
+            echo '<li>点击右上角/左上角的 <strong>...</strong> 或 <strong>⋮</strong> 按钮</li>';
+            echo '<li>选择 <strong>"在浏览器中打开"</strong> 或 <strong>"在Safari/Chrome中打开"</strong></li>';
+            echo '<li>在系统浏览器中查看完整内容</li>';
+            echo '</ol>';
+            
+            // 尝试生成一个直接打开的链接（可选）
+            $currentUrl = (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http") . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
+            echo '<a href="'.htmlspecialchars($currentUrl).'" class="btn">点击尝试在浏览器中打开</a>';
+            
+            echo '</div>';
         } else {
-            echo '<div class="loading">正在加载内容...</div>';
+            // 
+            $contentUrl = getContentUrl();
+            
+            if ($contentUrl) {
+                // 验证 URL 安全性
+                if (filter_var($contentUrl, FILTER_VALIDATE_URL)) {
+                    echo '<iframe class="content-frame" src="' . htmlspecialchars($contentUrl) . '" frameborder="0"></iframe>';
+                } else {
+                    echo '<div class="error">错误: 获取的内容 URL 无效</div>';
+                }
+            } else {
+                echo '<div class="loading">正在加载内容...</div>';
+            }
         }
         ?>
     </div>
+    
+    <script>
+
+        document.addEventListener('DOMContentLoaded', function() {
+           
+        });
+    </script>
 </body>
 </html>
