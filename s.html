@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API 内容框架</title>
+    <style>
+        .frame-container {
+            border: 2px solid #ccc;
+            border-radius: 5px;
+            padding: 10px;
+            margin: 20px auto;
+            max-width: 90%;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        
+        .frame-title {
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #333;
+        }
+        
+        .content-frame {
+            width: 100%;
+            height: 500px;
+            border: 1px solid #ddd;
+            border-radius: 3px;
+        }
+        
+        .loading {
+            text-align: center;
+            padding: 20px;
+            color: #666;
+        }
+        
+        .error {
+            color: red;
+            padding: 20px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="frame-container">
+        <div class="frame-title">内容展示框架</div>
+        
+        <?php
+        // API 请求函数
+        function getContentUrl() {
+            $apiUrl = 'https://XXX.com/api';
+            
+            try {
+                // 发起 API 请求
+                $response = file_get_contents($apiUrl);
+                if ($response === FALSE) {
+                    throw new Exception("无法获取 API 数据");
+                }
+                
+                // 解析 JSON 响应
+                $data = json_decode($response, true);
+                if (json_last_error() !== JSON_ERROR_NONE) {
+                    throw new Exception("JSON 解析错误: " . json_last_error_msg());
+                }
+                
+                // 检查 API 返回状态
+                if ($data['code'] != 0 || empty($data['data'])) {
+                    throw new Exception("API 返回错误: " . ($data['message'] ?? '未知错误'));
+                }
+                
+                return $data['data'];
+            } catch (Exception $e) {
+                echo '<div class="error">错误: ' . htmlspecialchars($e->getMessage()) . '</div>';
+                return null;
+            }
+        }
+        
+        // 获取内容 URL
+        $contentUrl = getContentUrl();
+        
+        if ($contentUrl) {
+            // 验证 URL 安全性
+            if (filter_var($contentUrl, FILTER_VALIDATE_URL)) {
+                echo '<iframe class="content-frame" src="' . htmlspecialchars($contentUrl) . '" frameborder="0"></iframe>';
+            } else {
+                echo '<div class="error">错误: 获取的内容 URL 无效</div>';
+            }
+        } else {
+            echo '<div class="loading">正在加载内容...</div>';
+        }
+        ?>
+    </div>
+</body>
+</html>
