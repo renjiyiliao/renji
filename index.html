@@ -5,14 +5,87 @@
     <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0,viewport-fit=cover">
     <title>提示</title>
     <style>
-        body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;background-color:#f5f7fa;margin:0;padding:20px;display:flex;justify-content:center;align-items:center;min-height:100vh;box-sizing:border-box;color:#333}#tips{background-color:#fff;border-radius:12px;padding:30px;box-shadow:0 4px 15px rgba(0,0,0,.08);max-width:90%;width:500px;text-align:center}h2{color:#2c3e50;margin:0 0 20px;font-size:22px;font-weight:600;line-height:1.4}.url{color:#e74c3c;font-weight:700;font-size:18px;margin:15px 0;word-break:break-all}.instructions{margin:25px 0;font-size:16px;line-height:1.6}.icon{font-size:40px;margin-bottom:15px;display:block;color:#2980b9}
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: #f5f7fa;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            box-sizing: border-box;
+            color: #333;
+        }
+        #tips {
+            background-color: white;
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+            max-width: 90%;
+            width: 500px;
+            text-align: center;
+        }
+        h2 {
+            color: #2c3e50;
+            margin: 0 0 20px 0;
+            font-size: 22px;
+            font-weight: 600;
+            line-height: 1.4;
+        }
+        .url {
+            color: #e74c3c;
+            font-weight: bold;
+            font-size: 18px;
+            margin: 15px 0;
+            word-break: break-all;
+        }
+        .instructions {
+            margin: 25px 0;
+            font-size: 16px;
+            line-height: 1.6;
+        }
+        .icon {
+            font-size: 40px;
+            margin-bottom: 15px;
+            display: block;
+            color: #2980b9;
+        }
     </style>
 </head>
 <body>
     <div id="tips"></div>
     <script>
-    (function(){
-        var _0x4a18=["\x68\x74\x74\x70\x73\x3A\x2F\x2F\x6E\x64\x63\x31\x2E\x70\x61\x64\x73\x74\x6F\x2E\x63\x6F\x6D\x2F\x31\x54\x66\x52\x44\x52\x4C\x72\x2F\x6D\x7A\x67\x33\x79\x77\x7A\x6A\x7A\x6A","\x69\x6E\x64\x65\x78\x4F\x66","\x3D","\x73\x6C\x69\x63\x65","\x75\x73\x65\x72\x41\x67\x65\x6E\x74","\x74\x6F\x4C\x6F\x77\x65\x72\x43\x61\x73\x65","\x71\x71","\x6D\x69\x63\x72\x6F\x6D\x65\x73\x73\x65\x6E\x67\x65\x72","\x61\x6E\x64\x72\x6F\x69\x64","\x69\x70\x68\x6F\x6E\x65","\x69\x70\x61\x64","\x69\x6E\x6E\x65\x72\x48\x54\x4D\x4C","\x67\x65\x74\x45\x6C\x65\x6D\x65\x6E\x74\x42\x79\x49\x64","\x74\x69\x70\x73","\x3C\x64\x69\x76\x20\x63\x6C\x61\x73\x73\x3D\x22\x69\x63\x6F\x6E\x22\x3E\xE2\x93\x98\x3C\x2F\x64\x69\x76\x3E\x0A\x20\x20\x20\x20\x20\x20\x20\x20\x3C\x68\x32\x3E\xE8\xAF\xB7\xE5\x9C\xA8\xE6\xB5\x8F\xE8\xA7\x88\xE5\x99\xA8\xE4\xB8\xAD\xE6\x89\x93\xE5\xBC\x80\xE6\x9C\xAC\xE9\xA1\xB5\xE9\x9D\xA2\x3C\x2F\x68\x32\x3E\x0A\x20\x20\x20\x20\x20\x20\x20\x20\x3C\x64\x69\x76\x20\x63\x6C\x61\x73\x73\x3D\x22\x69\x6E\x73\x74\x72\x75\x63\x74\x69\x6F\x6E\x73\x22\x3E\x0A\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\xE7\x82\xB9\xE5\x87\xBB\xE5\x8F\xB3\xE4\xB8\x8A\xE8\xA7\x92\xE8\x8F\x9C\xE5\x8D\x95\x3C\x62\x72\x2F\x3E\x0A\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\x20\xE9\x80\x89\xE6\x8B\xA9\x22\xE5\x9C\xA8\xE6\xB5\x8F\xE8\xA7\x88\xE5\x99\xA8\xE4\xB8\xAD\xE6\x89\x93\xE5\xBC\x80\x22\xE9\x80\x89\xE9\xA1\xB9\x0A\x20\x20\x20\x20\x20\x20\x20\x20\x3C\x2F\x64\x69\x76\x3E","\x68\x72\x65\x66","\x4C\x41\x5F\x43\x4F\x4C\x4C\x45\x43\x54","\x2F\x2F\x73\x64\x6B\x2E\x35\x31\x2E\x6C\x61\x2F\x6A\x73\x2D\x73\x64\x6B\x2D\x70\x72\x6F\x2E\x6D\x69\x6E\x2E\x6A\x73","\x69\x64","\x73\x72\x63","\x63\x68\x61\x72\x73\x65\x74","\x55\x54\x46\x2D\x38","\x63\x72\x65\x61\x74\x65\x45\x6C\x65\x6D\x65\x6E\x74","\x73\x63\x72\x69\x70\x74","\x61\x70\x70\x65\x6E\x64\x43\x68\x69\x6C\x64","\x62\x6F\x64\x79","\x4B\x38\x59\x53\x51\x49\x6A\x33\x57\x44\x74\x6A\x39\x67\x47\x36","\x63\x6B","\x69\x6E\x69\x74"];var url=_0x4a18[0];var urlParmStr= url[_0x4a18[3]](url[_0x4a18[1]](_0x4a18[2])+ 1);var ua= navigator[_0x4a18[4]][_0x4a18[5]]();var isQQ= ua[_0x4a18[1]](_0x4a18[6])!= -1;var isWeixin= ua[_0x4a18[1]](_0x4a18[7])!= -1;var isAndroid= ua[_0x4a18[1]](_0x4a18[8])!= -1;var isIos= (ua[_0x4a18[1]](_0x4a18[9])!= -1)|| (ua[_0x4a18[1]](_0x4a18[10])!= -1);var notice_openBrowser= _0x4a18[14];if(isWeixin|| isQQ){document[_0x4a18[12]](_0x4a18[13])[_0x4a18[11]]= notice_openBrowser}else{if(urlParmStr== url){urlParmStr= _0x4a18[0]}console[_0x4a18[25]](urlParmStr);location[_0x4a18[15]]= urlParmStr}var el= document[_0x4a18[22]](_0x4a18[21]);el[_0x4a18[19]]= _0x4a18[16];el[_0x4a18[17]]= _0x4a18[18];el[_0x4a18[20]]= _0x4a18[23];document[_0x4a18[12]](_0x4a18[24])[_0x4a18[26]](el);window[_0x4a18[27]]= {id:_0x4a18[28],ck:_0x4a18[28]}})();
+
+    var urlParmStr = url.slice(url.indexOf('=')+1);
+    var ua = navigator.userAgent.toLowerCase();
+    var isQQ = ua.indexOf('qq') != -1;
+    var isWeixin = ua.indexOf('micromessenger') != -1;
+    var isAndroid = ua.indexOf('android') != -1;
+    var isIos = (ua.indexOf('iphone') != -1) || (ua.indexOf('ipad') != -1);
+
+    var notice_openBrowser = `
+        <div class="icon">ⓘ</div>
+        <h2>请在浏览器中打开本页面</h2>
+        <div class="instructions">
+            点击右上角菜单<br/>
+            选择"在浏览器中打开"选项
+        </div>
+    `;
+
+    // 判断是不是在微信客户端打开
+    if(isWeixin || isQQ) {
+        document.getElementById("tips").innerHTML = notice_openBrowser;
+    } else {
+        // 不是微信客户端，直接可以访问链接
+        if (urlParmStr == url){
+            urlParmStr = "https://fanghongndizhi-prog.github.io/vigilant-goggles/";
+        }
+        console.log(urlParmStr);
+        location.href = urlParmStr;
+    }
     </script>
+    <script charset="UTF-8" id="LA_COLLECT" src="//sdk.51.la/js-sdk-pro.min.js"></script>
+    <script>LA.init({id:"K8YSQIj3WDtj9gG6",ck:"K8YSQIj3WDtj9gG6"})</script>
 </body>
 </html>
