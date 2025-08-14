@@ -3,25 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>浏览器打开提示</title>
+    <title>温馨提示</title>
     <script>
-        // 检测是否在微信内置浏览器中
+      
         function isWeixinBrowser() {
             var ua = navigator.userAgent.toLowerCase();
             return ua.indexOf('micromessenger') !== -1;
         }
         
-        // 页面加载时检查
+     
         window.onload = function() {
             if (isWeixinBrowser()) {
-                // 在微信中打开，显示提示
+           
                 document.getElementById('weixin-tip').style.display = 'block';
             } else {
-                // 不在微信中打开，直接跳转或显示内容
-                // 方法1：直接跳转到目标链接
+            
                 window.location.href = "https://ndc1.padsto.com/1TfRDRLr/mzg3ywzjzj";
                 
-                // 方法2：显示页面内容（这里用简单的文字示例）
                 document.getElementById('content').style.display = 'block';
             }
         };
