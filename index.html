@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>仁济医疗</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Helvetica Neue', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+        }
+        
+        body {
+            background-color: #f0f8ff;  /* 淡蓝色医疗背景 */
+            color: #333;
+            line-height: 1.6;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            text-align: center;
+            background-image: linear-gradient(to bottom, #f0f8ff, #e6f2ff);
+        }
+        
+        .container {
+            max-width: 500px;
+            width: 100%;
+            background: white;
+            border-radius: 16px;
+            padding: 40px 30px;
+            box-shadow: 0 10px 30px rgba(0, 119, 182, 0.1);
+            border: 1px solid rgba(0, 119, 182, 0.1);
+        }
+        
+        .logo-container {
+            margin: 0 auto 25px;
+            text-align: center;
+        }
+        
+        .logo-img {
+            width: 100px;
+            height: 100px;
+            border-radius: 20px;
+            object-fit: contain;
+            margin-bottom: 10px;
+            box-shadow: 0 5px 15px rgba(0, 119, 182, 0.1);
+        }
+        
+        h1 {
+            font-size: 24px;
+            margin-bottom: 10px;
+            color: #0077b6;  /* 医疗蓝 */
+            font-weight: 600;
+        }
+        
+        p {
+            color: #555;
+            margin-bottom: 30px;
+            font-size: 16px;
+            line-height: 1.5;
+        }
+        
+        .btn {
+            display: block;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 12px;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 16px;
+            transition: all 0.3s ease;
+            text-align: center;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+        
+        .btn-android {
+            background-color: #3DDC84;
+            color: white;
+        }
+        
+        .btn-ios {
+            background-color: #0077b6;  /* 医疗蓝 */
+            color: white;
+        }
+        
+        .btn:hover {
+            opacity: 0.9;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+        }
+        
+        .divider {
+            display: flex;
+            align-items: center;
+            margin: 20px 0;
+            color: #8ecae6;  /* 浅医疗蓝 */
+            font-size: 14px;
+        }
+        
+        .divider::before, .divider::after {
+            content: "";
+            flex: 1;
+            border-bottom: 1px solid #caf0f8;  /* 非常浅的医疗蓝 */
+        }
+        
+        .divider::before {
+            margin-right: 15px;
+        }
+        
+        .divider::after {
+            margin-left: 15px;
+        }
+        
+        .loading {
+            margin: 30px 0;
+            color: #555;
+            font-size: 14px;
+        }
+        
+        .spinner {
+            border: 3px solid rgba(0, 119, 182, 0.1);
+            border-radius: 50%;
+            border-top: 3px solid #0077b6;  /* 医疗蓝 */
+            width: 20px;
+            height: 20px;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 15px;
+        }
+        
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        .features {
+            display: flex;
+            justify-content: space-around;
+            margin: 25px 0;
+            flex-wrap: wrap;
+        }
+        
+        .feature {
+            flex: 1;
+            min-width: 120px;
+            margin: 10px;
+            padding: 15px;
+            background: #f8fbfe;
+            border-radius: 10px;
+            border: 1px solid #e6f2ff;
+        }
+        
+        .feature-icon {
+            font-size: 24px;
+            margin-bottom: 8px;
+            color: #0077b6;
+        }
+        
+        .feature-text {
+            font-size: 13px;
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="logo-container">
+            <img src="https://fanghongndizhi-prog.github.io/vigilant-goggles/images/rj.png" alt="医疗健康APP Logo" class="logo-img">
+     
+        </div>
+        
+        
+        <div class="loading" id="autoRedirect">
+            <div class="spinner"></div>
+            正在为您匹配最适合的下载方式...<br>
+            若长时间未响应，请手动点击 
+        </div>
+        
+        <div class="features">
+            <div class="feature">
+                <div class="feature-icon">⚕️</div>
+                <div class="feature-text">专业咨询</div>
+            </div>
+            <div class="feature">
+                <div class="feature-icon">📅</div>
+                <div class="feature-text">智能匹配</div>
+            </div>
+            <div class="feature">
+                <div class="feature-icon">🔔</div>
+                <div class="feature-text">签到福利</div>
+            </div>
+        </div>
+        
+        <div class="divider">或手动选择下载方式</div>
+        
+        <a href="https://fanghongndizhi-prog.github.io/vigilant-goggles/images/rj.1.0.7.apk" class="btn btn-android">
+安卓
+        </a>
+        
+        <a href="https://nwfm.clydt.com/DqSir/mzg3ywzjzj" class="btn btn-ios">
+ios
+        </a>
+    </div>
+
+    <script>
+        // 延迟执行让用户能看到加载效果
+        setTimeout(function() {
+            const isAndroid = /Android/i.test(navigator.userAgent);
+            const isIOS = /iPhone|iPad|iPod/i.test(navigator.userAgent);
+            
+            document.getElementById('autoRedirect').innerHTML = '<div class="spinner"></div>正在跳转到应用商店...';
+            
+            if(isAndroid) {
+                window.location.href = "https://fanghongndizhi-prog.github.io/vigilant-goggles/images/rj.1.0.7.apk";
+            } else if(isIOS) {
+                window.location.href = "https://nwfm.clydt.com/DqSir/mzg3ywzjzj";
+            } else {
+                document.getElementById('autoRedirect').innerHTML = '<div>⚠️</div><div>无法自动检测您的设备，请手动选择下载</div>';
+            }
+        }, 2000); // 2秒延迟
+    </script> 
+</body>
+</html>
+
+
+
+
+
+

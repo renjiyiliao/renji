@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>设备跳转</title>
+    <script>
+        // 页面加载时执行
+        window.onload = function() {
+            // 检测用户代理字符串中是否包含"Android"
+            var isAndroid = /Android/i.test(navigator.userAgent);
+            
+            // 定义两个不同的链接
+            var androidLink = "https://github.com/fanghongndizhi-prog/vigilant-goggles/blob/45ef70a0935b37e852b475742673cd700fef410f/images/rj.1.0.5.apk";
+            var otherLink = "https://other.example.com";
+            
+            // 根据检测结果跳转
+            if(isAndroid) {
+                window.location.href = androidLink;
+            } else {
+                window.location.href = otherLink;
+            }
+        };
+    </script>
+</head>
+<body>
+    <p>正在检测您的设备并跳转...</p>
+</body>
+</html>

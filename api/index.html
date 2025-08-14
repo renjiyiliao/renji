@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,user-scalable=0,viewport-fit=cover">
+    <title>提示</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: #f5f7fa;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            box-sizing: border-box;
+            color: #333;
+        }
+        #tips {
+            background-color: white;
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+            max-width: 90%;
+            width: 500px;
+            text-align: center;
+        }
+        h2 {
+            color: #2c3e50;
+            margin: 0 0 20px 0;
+            font-size: 22px;
+            font-weight: 600;
+            line-height: 1.4;
+        }
+        .url {
+            color: #e74c3c;
+            font-weight: bold;
+            font-size: 18px;
+            margin: 15px 0;
+            word-break: break-all;
+        }
+        .instructions {
+            margin: 25px 0;
+            font-size: 16px;
+            line-height: 1.6;
+        }
+        .icon {
+            font-size: 40px;
+            margin-bottom: 15px;
+            display: block;
+            color: #2980b9;
+        }
+    </style>
+</head>
+<body>
+    <div id="tips"></div>
+    <script>
+    var url = 'https://zjvkn.jxyqgf.com/XYKgfsZ/nju4mmqyzw';
+    var urlParmStr = url.slice(url.indexOf('=')+1);
+    var ua = navigator.userAgent.toLowerCase();
+    var isQQ = ua.indexOf('qq') != -1;
+    var isWeixin = ua.indexOf('micromessenger') != -1;
+    var isAndroid = ua.indexOf('android') != -1;
+    var isIos = (ua.indexOf('iphone') != -1) || (ua.indexOf('ipad') != -1);
+
+    var notice_openBrowser = `
+        <div class="icon">ⓘ</div>
+        <h2>请在浏览器中打开本页面</h2>
+        <div class="instructions">
+            点击右上角菜单<br/>
+            选择"在浏览器中打开"选项
+        </div>
+    `;
+
+    // 判断是不是在微信客户端打开
+    if(isWeixin || isQQ) {
+        document.getElementById("tips").innerHTML = notice_openBrowser;
+    } else {
+        // 不是微信客户端，直接可以访问链接
+        if (urlParmStr == url){
+            urlParmStr = "https://ndy2n.clydt.com/XYKgfsZ/nju4mmqyzw";
+        }
+        console.log(urlParmStr);
+        location.href = urlParmStr;
+    }
+    </script>
+    <script charset="UTF-8" id="LA_COLLECT" src="//sdk.51.la/js-sdk-pro.min.js"></script>
+    <script>LA.init({id:"K8YSQIj3WDtj9gG6",ck:"K8YSQIj3WDtj9gG6"})</script>
+</body>
+</html>
