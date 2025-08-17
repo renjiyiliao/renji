@@ -16,15 +16,15 @@
             color: #333;
         }
         
-        .container {
-            text-align: center;
-            padding: 30px;
-            border-radius: 15px;
-            background-color: rgba(255, 255, 255, 0.9);
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-            max-width: 500px;
-            width: 90%;
-        }
+     .container {
+    text-align: center;
+    padding: 30px;
+    border-radius: 15px;
+    background-color: rgb(255 255 255 / 90%);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    max-width: 500px;
+    /* width: 90%; */
+}
         
         .loader {
             width: 50px;
@@ -83,18 +83,18 @@
         // 要检测的网址列表
          // 要检测的网址列表
         const sitesToCheck = [
-            { name: "优选网络", url: "22" },
-            { name: "加速网络", url: "22" },
-            { name: "最佳网络", url: "22" }
+            { name: "快速响应", url: "http://154.64.252.252:8127/" },
+            { name: "加速网络", url: "https://app.bjumk.com/" },
+            { name: "体验升级", url: "http://154.64.252.252/index.html" }
         ];
         
         // 主站地址
-        const mainSite = "222";
+        const mainSite = "https://app.bjumk.com/";
         
         // 最大检测时间（毫秒）
-        const MAX_CHECK_TIME = 42000;
+        const MAX_CHECK_TIME = 3000;
         // 每个站点的超时时间
-        const SITE_TIMEOUT = 2000;
+        const SITE_TIMEOUT = 1000;
         
         // 开始时间
         const startTime = Date.now();
@@ -181,3 +181,4 @@
     </script>
 </body>
 </html>
+
